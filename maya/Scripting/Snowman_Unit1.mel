@@ -1,0 +1,41 @@
+//Created Spheres for Base Snowman
+//Big Sphere
+polySphere -radius 3 -subdivisionsX 20 -subdivisionsY 20 -axis 0 1 0 -createUVs 2 -constructionHistory 1;
+move -relative -objectSpace -worldSpaceDistance 0 3 0;
+
+//Mid Sphere
+polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
+polySphere -e -radius 2;
+move -relative -objectSpace -worldSpaceDistance 0 7 0;
+
+//Small Sphere 
+polySphere -radius 1.25 -subdivisionsX 20 -subdivisionsY 20 -axis 0 1 0 -createUVs 2 -constructionHistory 1;
+move -relative -objectSpace -worldSpaceDistance 0 9.5 0;
+
+//SnowMan Eyes and nose
+polySphere -r 0.263  -subdivisionsX 20 -subdivisionsY 20 -axis 0 1 0.131 -createUVs 2 -constructionHistory 1;
+move -r 0.561 10.282 0.704;
+//polySphere -r 4 -sh 3 -sa 100;
+polySphere -radius 0.263 -subdivisionsX 20 -subdivisionsY 20 -axis 0 1 0.131 -createUVs 2 -constructionHistory 1; 
+move -r -0.433 10.282 0.704;
+polyCone -radius 0.27 -subdivisionsX 20 -subdivisionsY 20 -axis 0 1 0.131 -createUVs 2 -constructionHistory 1; 
+move -r 0 10.185 1.301;
+rotate -r 52.587;
+//Mouth 
+polySphere -radius 0.202 -subdivisionsX 20 -subdivisionsY 20 -axis 0 1 0.131 -createUVs 2 -constructionHistory 1; 
+move -r -0.433 9.527 1.042;
+polySphere -radius 0.202 -subdivisionsX 20 -subdivisionsY 20 -axis 0 1 0.131 -createUVs 2 -constructionHistory 1; 
+move -r -0.25 9.408 1.096;
+polySphere -radius 0.202 -subdivisionsX 20 -subdivisionsY 20 -axis 0 1 0.131 -createUVs 2 -constructionHistory 1; 
+move -r -0.024 9.3 1.107;
+polySphere -radius 0.202 -subdivisionsX 20 -subdivisionsY 20 -axis 0 1 0.131 -createUVs 2 -constructionHistory 1; 
+move -r 0.239 9.267 1.091;
+polySphere -radius 0.202 -subdivisionsX 20 -subdivisionsY 20 -axis 0 1 0.131 -createUVs 2 -constructionHistory 1; 
+move -r 0.535 9.426 1.037;
+polySphere -radius 0.202 -subdivisionsX 20 -subdivisionsY 20 -axis 0 1 0.131 -createUVs 2 -constructionHistory 1; 
+move -r 0.737 9.527 0.933;
+//small Buttons 
+polySphere -radius 0.205 -subdivisionsX 20 -subdivisionsY 20 -axis 0 1 0.131 -createUVs 2 -constructionHistory 1; 
+move -r 0.214 7.771 1.648;
+polySphere -radius 0.205 -subdivisionsX 20 -subdivisionsY 20 -axis 0 1 0.131 -createUVs 2 -constructionHistory 1; 
+move -r 0.214 6.698 1.829;

@@ -1,0 +1,29 @@
+float $eyesize = 0.1;
+float $CylinderSize = .75;
+float $size = 3;
+
+polySphere -radius $size -subdivisionsX 20 -subdivisionsY 20 -axis 0 1 0 -createUVs 2 -constructionHistory 1;
+move -r 0 $size 0 ;
+
+polySphere -radius ($size - 1)-subdivisionsX 20 -subdivisionsY 20 -axis 0 1 0 -createUVs 2 -constructionHistory 1;
+move -r -os -wd 0 (($size * 1.738) + ($size - 1)) 0 ;
+
+polySphere -radius ($size -2)-subdivisionsX 20 -subdivisionsY 20 -axis 0 1 0 -createUVs 2 -constructionHistory 1;
+move -r -os -wd 0 (($size * 1.738) + (($size - 1) * 1.738) + ($size -2)) 0 ;
+
+polyCone -radius .25 -height 1 -subdivisionsX 20 -subdivisionsY 20 -sz 0 -axis 90 1 0 -createUVs 3 -constructionHistory 1;
+move -r -os -wd 1(($size * 1.738) +(($size - 1) * 1.738 ) + ($size -2)) 0;
+
+polySphere -radius $eyesize -subdivisionsX 20 -subdivisionsY 20 -axis 0 1 0 -createUVs 2 -constructionHistory 1;
+move -r -os -wd .9 (($size * 1.738) + (($size- 1) * 1.738) + ($size -1.75)) 0.33 ;
+
+polySphere -radius $eyesize -subdivisionsX 20 -subdivisionsY 20 -axis 0 1 0 -createUVs 2 -constructionHistory 1;
+move -r -os -wd .9 (($size * 1.738) + (($size - 1) * 1.738) + ($size -1.75)) -0.33 ;
+
+polyCylinder -radius $CylinderSize -height .25 -subdivisionsX 20 -subdivisionsY 20 -axis 0 1 0 -createUVs 2 -constructionHistory 1;
+move -r -os -wd 0 (($size * 1.800) + (($size - 1) * 2) + ($size -1.75)) 0;
+
+polyCylinder -radius ($CylinderSize -.25) -height .75 -subdivisionsX 20 -subdivisionsY 20 -axis 0 1 0 -createUVs 2 -constructionHistory 1;
+move -r -os -wd 0 (($size * 1.900) + (($size - 1) * 2) + ($size -1.55)) 0;
+
+//Git Link: https://github.com/Sean793-spec/UVU-SOFallSemester2025

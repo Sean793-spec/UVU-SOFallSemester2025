@@ -1,0 +1,119 @@
+//Function for each math method 
+//return values
+//1 arg float$input()
+//Calculate all arguments 
+//return 
+//seperate function for every operator 
+//sum, diff, mult, div, power, mean, median;
+
+
+global proc float math_sum(float $input[])
+{
+    float $result = 0;
+    for ($i=0; $i<size($input); $i++)
+    {
+        $result += $input[$i];
+    }
+    return $result;
+}
+global proc float math_diff(float $input[])
+{
+    float $result = 0;
+    for ($i=0; $i<size($input); $i++)
+    {
+        $result -= $input[$i];
+    }
+    return $result;
+}
+global proc float math_mult(float $inputs[])
+{
+float $result = 1;
+for ($index = 0; $index < size($inputs); $index++)
+{
+    $result *= $inputs[$index];
+}
+return $result;
+}
+global proc float math_div(float $inputs[])
+{
+    float $result = $inputs[0];
+    for ($index = 1; $index < size($inputs); $index++)
+    {
+        if ($inputs[$index] !=0)
+        {
+            $result /= $inputs[$index];
+        }
+        else 
+        {
+            error("Division by Zero is not allowed.");
+            return 0;
+        }
+    }
+    return $result;
+}
+global proc float math_mean(float $input[])
+    {
+    float $sum = math_sum($input);
+    $sum/= size($input);
+    return $sum;
+    }
+global proc float math_power(float $inputs[])
+{
+    float $result = $inputs[0];
+    for ($index = 1; $index < size($inputs); $index++)
+    {
+        for ($i = 1; $i < $inputs[$index]; $i++)
+        {
+            $result *= $result;
+        }
+    }
+    return $result;
+}
+global proc float math_median( float $input[]){
+int $size = size ($input);
+float $sorted [] = `sort $input`;
+
+if ($size % 2 == 0){
+    return ($sorted[$size/2 -1] + $sorted[$size/2]);
+}
+else
+{
+    return $sorted[($size/2)];
+}
+}
+
+global proc Calculator(string $funct, float $arry[])
+{
+if($funct == "Sum")
+{
+print ("Sum: " + math_sum($arry));
+}
+else if ($funct == "Diff")
+{
+print ("Diff: " + math_diff($arry));
+}
+else if ($funct == "Mult")
+{
+print ("Mult: " + math_mult($arry));
+}
+else if ($funct == "Div")
+{
+    print ("Div: " + math_div($arry));
+}
+else if ($funct == "Median")
+{
+print ("Median: " + math_median($arry));
+}
+else if ($funct == "Mean")
+{
+print ("Mean: " + math_mean($arry));
+}
+else if ($funct == "Power")
+{
+    print ("Power: " + math_power($arry));
+}
+else
+{
+print("Function not reconized");
+}
+};

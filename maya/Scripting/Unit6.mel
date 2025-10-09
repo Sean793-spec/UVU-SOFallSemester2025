@@ -1,0 +1,37 @@
+//Unit 6
+string $window = `window - title "ourWindow" -widthHeight 300 350`; 
+gridLayout -numberOfColumns 2 -cellWidthHeight 50 50;
+     
+        text - label "Number of Objects";
+         intField numfield;
+        text -label "x chord" -bgc 1 0 0;
+        floatField xfield;
+        text - label "y chord" -bgc 0 1 0;
+        floatField yfield;
+        text -label "z chord" -bgc 0 0 1;
+        floatField zfield;
+        button -label "run";
+        button -label "run" -c "myFunction()";
+    
+  showWindow $window;
+  global proc myFunction ()
+  {
+    float $xvalue = `floatField -q -v xfield`;
+    float $yvalue = `floatField -q -v yfield`;
+    float $zvalue = `floatField -q -v zfield`;
+    int $numvalue = `intField -q -v numfield`;
+   string $selection [] = `ls -sl``; 
+    if (size ($selection) == 0)
+    {
+        error "Please select an object :("
+
+    }
+    else 
+    {
+        for ($i = 0; $i < $numvalue; $i++)
+        {
+            duplicate $selection[0];
+            xform
+        }
+    }
+  }
